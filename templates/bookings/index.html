@@ -17,10 +17,10 @@
     <p>{{ booking.gymclass.date }}</p>
     <p>{{ booking.gymclass.start_time }}</p>
     
-    <!-- <a href="/bookings/{{ booking.id }}/edit">Edit</a>
+    <a href="/bookings/{{ booking.id }}/edit">Edit</a>
     <form action="/bookings/{{ booking.id }}/delete" method="post">
         <input type="submit" value="Delete booking">
-    </form> -->
+    </form>
     <hr>
     {% endfor %}
 </section>

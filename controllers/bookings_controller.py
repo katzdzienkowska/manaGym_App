@@ -41,25 +41,25 @@ def create_booking():
 # GET '/xxx/<id>' - not needed here!
 
 # EDIT
-# # GET '/xxx/<id>/edit'
-# @bookings_blueprint.route("/bookings/<id>/edit", methods=["get"])
-# def edit_booking(id):
-#     booking = booking_repository.select(id)
-#     member = member_repository.select_all()
-#     gymclass = gymclass_repository.select_all()
-#     return render_template("bookings/edit.html", booking=booking, member=member, gymclass=gymclass)
+# GET '/xxx/<id>/edit'
+@bookings_blueprint.route("/bookings/<id>/edit", methods=["get"])
+def edit_booking(id):
+    booking = booking_repository.select(id)
+    member = member_repository.select_all()
+    gymclass = gymclass_repository.select_all()
+    return render_template("bookings/edit.html", booking=booking, member=member, gymclass=gymclass)
 
-# # UPDATE
-# # PUT '/xxx/<id>'
-# @bookings_blueprint.route("/bookings/<id>", methods=["post"])
-# def update_booking(id):
-#     member_id = request.form["member_id"]
-#     gymclass_id = request.form["gymclass_id"]
-#     member = member_repository.select(member_id)
-#     gymclass = gymclass_repository.select(gymclass_id)
-#     booking = Booking(member, gymclass, id)
-#     booking_repository.update(booking)
-#     return redirect("/bookings")
+# UPDATE
+# PUT '/xxx/<id>'
+@bookings_blueprint.route("/bookings/<id>", methods=["post"])
+def update_booking(id):
+    member_id = request.form["member_id"]
+    gymclass_id = request.form["gymclass_id"]
+    member = member_repository.select(member_id)
+    gymclass = gymclass_repository.select(gymclass_id)
+    booking = Booking(member, gymclass, id)
+    booking_repository.update(booking)
+    return redirect("/bookings")
 
 # DELETE
 # DELETE '/xxx/<id>'
