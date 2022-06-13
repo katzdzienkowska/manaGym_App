@@ -2,15 +2,18 @@
 
 {% block content %}
     
-<h1>Add new booking</h1>
+<h1>Edit booking details</h1>
 <section>
-    <form action="/bookings" method="post">
+    <form action="/bookings/{{ booking.id }}" method="post">
         
         <div>
             <label for="member">Choose member:</label>
             <select name="member_id" id="member">
                 {% for member in members %}
-                <option value="{{ member.id }}">
+                <option value="{{ member.id }}"
+                    {% if member.id == booking.member.id %}
+                        selected="selected"
+                    {% endif %}>
                     {{ member.name }}
                 </option>
                 {% endfor %}
@@ -21,14 +24,17 @@
             <label for="gymclass">Gym class:</label>
             <select name="gymclass_id" id="gymclass">
                 {% for gymclass in gymclasses %}
-                    <option value="{{ gymclass.id }}">
+                    <option value="{{ gymclass.id }}"
+                        {% if gymclass.id == booking.gymclass.id %}
+                            selected="selected"
+                        {% endif %}>
                         {{ gymclass.gymclass_name }} with {{ gymclass.instructor }}, {{ gymclass.date }} at {{ gymclass.start_time }}
                     </option>
                 {% endfor %}
             </select>
         </div>
 
-        <input type="submit" value="Add booking">
+        <input type="submit" value="Save booking">
 
     </form>
 </section>

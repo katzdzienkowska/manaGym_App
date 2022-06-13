@@ -39,8 +39,9 @@ def create_gymclass():
 # GET '/xxx/<id>'
 @gymclasses_blueprint.route("/gymclasses/<id>")
 def show_gymclass(id):
+    booked_members = gymclass_repository.list_of_members_booked(id)
     found_gymclass = gymclass_repository.select(id)
-    return render_template("gymclasses/show.html", gymclass=found_gymclass)
+    return render_template("gymclasses/show.html", gymclass=found_gymclass, booked_members=booked_members)
 
 # EDIT
 # GET '/xxx/<id>/edit'

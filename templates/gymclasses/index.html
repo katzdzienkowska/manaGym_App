@@ -9,20 +9,29 @@
     </h2>
 
     <section>
-        {% for gymclass in gymclasses %}
-        <p>{{ gymclass.gymclass_name }}</p>
-        <p>{{ gymclass.instructor }}</p>
-        <p>{{ gymclass.date }}</p>
-        <p>{{ gymclass.start_time }}</p>
-        <p>{{ gymclass.duration }}</p>
-        <p>{{ gymclass.capacity }}</p>
-        <p>{{ gymclass.active }}</p>
-        
-        <a href="/gymclasses/{{ gymclass.id }}/edit">Edit gym class</a>
-        <form action="/gymclasses/{{ gymclass.id }}/delete" method="post">
-            <input type="submit" value="Delete gym class">
-        </form>
-        {% endfor %}
+
+        <div>
+            {% for gymclass in gymclasses %}
+            <p>{{ gymclass.gymclass_name }}</p>
+            <p>{{ gymclass.instructor }}</p>
+            <p>{{ gymclass.date }}</p>
+            <p>{{ gymclass.start_time }}</p>
+            <p>{{ gymclass.duration }}</p>
+            <p>{{ gymclass.capacity }}</p>
+            <p>{{ gymclass.active }}</p>
+        </div>
+
+        <div>
+            <a href="/gymclasses/{{ gymclass.id }}">Booked members</a>
+        </div>
+
+        <div>
+            <a href="/gymclasses/{{ gymclass.id }}/edit">Edit gym class</a>
+            <form action="/gymclasses/{{ gymclass.id }}/delete" method="post">
+                <input type="submit" value="Delete gym class">
+            </form>
+            {% endfor %}
+        </div>
     </section>
 
 {% endblock content %}

@@ -2,4 +2,27 @@
 
 {% block content %}
     
+<h1>Bookings:</h1>
+
+<h2>
+    <a href="/bookings/new">Add new booking</a>
+</h2>
+
+<section>
+    {% for booking in bookings %}
+    <p>{{ booking.id }}</p>
+    <p>{{ booking.member.name }}</p>
+    <p>{{ booking.gymclass.gymclass_name }}</p>
+    <p>{{ booking.gymclass.instructor }}</p>
+    <p>{{ booking.gymclass.date }}</p>
+    <p>{{ booking.gymclass.start_time }}</p>
+    
+    <!-- <a href="/bookings/{{ booking.id }}/edit">Edit</a>
+    <form action="/bookings/{{ booking.id }}/delete" method="post">
+        <input type="submit" value="Delete booking">
+    </form> -->
+    <hr>
+    {% endfor %}
+</section>
+
 {% endblock content %}

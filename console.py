@@ -6,8 +6,8 @@ import repositories.booking_repository as booking_repository
 import repositories.gymclass_repository as gymclass_repository
 import repositories.member_repository as member_repository
 
-#booking_repository.delete_all()
-#gymclass_repository.delete_all()
+booking_repository.delete_all()
+gymclass_repository.delete_all()
 member_repository.delete_all()
 
 member_1 = Member("Joan Smith", "1985-05-13", "Core", True)
@@ -35,5 +35,27 @@ gymclass_repository.save(gymclass_2)
 gymclass_repository.save(gymclass_3)
 gymclass_repository.save(gymclass_4)
 gymclass_repository.save(gymclass_5)
+
+booking_1 = Booking(member_1, gymclass_1)
+booking_2 = Booking(member_2, gymclass_1)
+booking_3 = Booking(member_2, gymclass_2)
+booking_4 = Booking(member_3, gymclass_3)
+booking_5 = Booking(member_3, gymclass_5)
+booking_6 = Booking(member_6, gymclass_1)
+booking_7 = Booking(member_6, gymclass_2)
+booking_8 = Booking(member_6, gymclass_5)
+
+booking_repository.save(booking_1)
+booking_repository.save(booking_2)
+booking_repository.save(booking_3)
+booking_repository.save(booking_4)
+booking_repository.save(booking_5)
+booking_repository.save(booking_6)
+booking_repository.save(booking_7)
+booking_repository.save(booking_8)
+
+member_repository.select_all()
+gymclass_repository.select_all()
+booking_repository.select_all()
 
 pdb.set_trace()

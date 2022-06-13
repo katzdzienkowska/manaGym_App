@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 
 from models.gymclass import Gymclass
+from models.member import Member
 
 #CRUD: Create, Read, Update and Delete
 
@@ -25,7 +26,6 @@ def select_all():
         gymclasses.append(gymclass)
     return gymclasses
 
-#added below for future use
 def select(id):
     sql="SELECT * FROM gymclasses WHERE id = %s"
     values = [id]
@@ -50,3 +50,16 @@ def delete(id):
     sql = "DELETE FROM gymclasses WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+
+def list_of_members_booked(gymclass):
+    members_booked = []
+    sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE gymclass_id = %s"
+    values = [gymclass.id]
+    results = run_sql(sql, values)
+
+    for result in results:
+        member = Member(result["name"], result["dob"], result["membership"], result["active"], result["id"])
+        members_booked.append(member)
+    return members_booked
+

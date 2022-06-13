@@ -27,7 +27,7 @@ def select_all():
 
 #added below already for future use
 def select(id):
-    sql="SELECT * FROM members WHERE id = %s"
+    sql = "SELECT * FROM members WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
     member = Member(result["name"], result["dob"], result["membership"], result["active"], result["id"])
