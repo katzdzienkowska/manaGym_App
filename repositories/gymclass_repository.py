@@ -52,10 +52,10 @@ def delete(id):
     run_sql(sql, values)
 
 
-def list_of_members_booked(gymclass):
+def list_of_members_booked(id):
     members_booked = []
-    sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE gymclass_id = %s"
-    values = [gymclass.id]
+    sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE bookings.gymclass_id = %s"
+    values = [id]
     results = run_sql(sql, values)
 
     for result in results:
