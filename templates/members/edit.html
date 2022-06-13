@@ -2,4 +2,55 @@
 
 {% block content %}
     
+<h1>Edit member's information</h1>
+<section>
+    <form action="/members/{{ member.id }}" method="post">
+        
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="{{ member.name }}">
+        </div>
+
+        <div>
+            <label for="dob">Date of birth:</label>
+            <input type="date" id="dob" name="dob" value="{{ member.dob }}">
+        </div>
+
+        <div>
+            <label for="membership">Membership type:</label>
+            <select name="membership" id="membership">
+                <option value="Core"
+                {% if member.membership == "Core" %}
+                    selected="selected"
+                {% endif %}
+                >Core</option>
+                <option value="Plus"
+                {% if member.membership == "Plus" %}
+                    selected="selected"
+                {% endif %}
+                >Plus</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="active">Active member?</label>
+            <select name="active" id="active">
+                <option value="True"
+                {% if member.active == True %}
+                    selected="selected"
+                {% endif %}
+                >True</option>
+                <option value="False"
+                {% if member.active == False %}
+                    selected="selected"
+                {% endif %}
+                >False</option>
+            </select>
+        </div>
+
+        <input type="submit" value="Save member">
+
+    </form>
+</section>
+
 {% endblock content %}

@@ -2,17 +2,24 @@
 
 <!--put this in a table maybe?-->
 {% block content %}
-    <h1>Members:</h1>
+<h1>Members:</h1>
 
+<section>
     {% for member in members %}
-        <p>{{ member.id }}</p>
-        <p>{{ member.name }}</p>
-        <p>{{ member.dob }}</p>
-        <p>{{ member.membership }}</p>
-        <p>{{ member.active }}</p>
+    <p>{{ member.id }}</p>
+    <p>{{ member.name }}</p>
+    <p>{{ member.dob }}</p>
+    <p>{{ member.membership }}</p>
+    <p>{{ member.active }}</p>
+    
+    <a href="/members/{{ member.id }}/edit">Edit member</a>
+    <form action="/members/{{ member.id }}/delete" method="post">
+        <input type="submit" value="Delete member">
+    </form>
 
         <!--add here edit and delete buttons-->
     {% endfor %}
+</section>
 {% endblock content %}
 
 <!--add on this page a button to add a new member as well!!-->

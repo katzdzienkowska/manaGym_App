@@ -6,4 +6,4 @@ class Member:
         self.active = active
         self.id = id
 
-#think about memberships - where to store the data plus set up default value?
+#store here membership types?
