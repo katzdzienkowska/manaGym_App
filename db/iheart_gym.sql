@@ -12,7 +12,7 @@ CREATE TABLE members (
 
 CREATE TABLE gymclasses (
     id SERIAL PRIMARY KEY,
-    class_name VARCHAR(255),
+    gymclass_name VARCHAR(255),
     instructor VARCHAR(255),
     date DATE,
     start_time TIME,

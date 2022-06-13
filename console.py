@@ -24,6 +24,16 @@ member_repository.save(member_4)
 member_repository.save(member_5)
 member_repository.save(member_6)
 
+gymclass_1 = Gymclass("Crossfit", "Becky", "2022-06-20", "18:00", 45, 8, True)
+gymclass_2 = Gymclass("Kettlebells", "Taylor", "2022-06-23", "19:45", 30, 10, True)
+gymclass_3 = Gymclass("Yoga", "Karen", "2022-06-24", "20:00", 60, 12, True)
+gymclass_4 = Gymclass("Box Fit", "Andrew", "2022-06-25", "17:45", 30, 6, False)
+gymclass_5 = Gymclass("Mobility", "Jacob", "2022-06-20", "19:30", 45, 10, True)
 
+gymclass_repository.save(gymclass_1)
+gymclass_repository.save(gymclass_2)
+gymclass_repository.save(gymclass_3)
+gymclass_repository.save(gymclass_4)
+gymclass_repository.save(gymclass_5)
 
 pdb.set_trace()

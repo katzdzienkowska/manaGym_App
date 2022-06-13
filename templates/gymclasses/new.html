@@ -2,4 +2,51 @@
 
 {% block content %}
     
+<h1>Add new gym class</h1>
+<section>
+    <form action="/gymclasses" method="post">
+        
+        <div>
+            <label for="gymclass_name">Class name:</label>
+            <input type="text" id="gymclass_name" name="gymclass_name" autofocus placeholder="Add gym class name" required>
+        </div>
+
+        <div>
+            <label for="instructor">Instructor name:</label>
+            <input type="text" id="instructor" name="instructor" placeholder="Add instructor name" required>
+        </div>
+
+        <div>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+        </div>
+
+        <div>
+            <label for="start_time">Start time:</label>
+            <input type="time" id="start_time" name="start_time" required>
+        </div>
+
+        <div>
+            <label for="duration">Duration:</label>
+            <input type="number" id="duration" name="duration" required>
+        </div>
+
+        <div>
+            <label for="capacity">Gym class capacity:</label>
+            <input type="number" id="capacity" name="capacity" required>
+        </div>
+
+        <div>
+            <label for="active">Active gym class?</label>
+            <select name="active" id="active">
+                <option value="True">True</option>
+                <option value="False">False</option>
+            </select>
+        </div>
+
+        <input type="submit" value="Add new gym class">
+
+    </form>
+</section>
+
 {% endblock content %}

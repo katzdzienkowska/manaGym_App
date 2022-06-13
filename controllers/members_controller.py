@@ -37,7 +37,7 @@ def create_member():
 @members_blueprint.route("/members/<id>")
 def show_member(id):
     found_member = member_repository.select(id)
-    return render_template("members.show.html", member=found_member)
+    return render_template("members/show.html", member=found_member)
 
 # EDIT
 # GET '/xxx/<id>/edit'

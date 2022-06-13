@@ -2,4 +2,59 @@
 
 {% block content %}
     
+<h1>Edit gym class information</h1>
+<section>
+    <form action="/gymclasses/{{ gymclass.id }}" method="post">
+        
+        <div>
+            <label for="gymclass_name">Gym class name:</label>
+            <input type="text" id="gymclass_name" name="gymclass_name" value="{{ gymclass.gymclass_name }}">
+        </div>
+
+        <div>
+            <label for="instructor">Instructor name:</label>
+            <input type="text" id="instructor" name="instructor" value="{{ gymclass.instructor }}">
+        </div>
+
+        <div>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" value="{{ gymclass.date }}">
+        </div>
+
+        <div>
+            <label for="start_time">Start time:</label>
+            <input type="time" id="start_time" name="start_time" value="{{ gymclass.start_time }}">
+        </div>
+
+        <div>
+            <label for="duration">Duration:</label>
+            <input type="number" id="duration" name="duration" value="{{ gymclass.duration }}">
+        </div>
+
+        <div>
+            <label for="capacity">Gym class capacity:</label>
+            <input type="number" id="capacity" name="capacity" value="{{ gymclass.capacity }}">
+        </div>
+
+        <div>
+            <label for="active">Active gym class?</label>
+            <select name="active" id="active">
+                <option value="True"
+                {% if gymclass.active == True %}
+                    selected="selected"
+                {% endif %}
+                >True</option>
+                <option value="False"
+                {% if gymclass.active == False %}
+                    selected="selected"
+                {% endif %}
+                >False</option>
+            </select>
+        </div>
+
+        <input type="submit" value="Save gym class">
+
+    </form>
+</section>
+
 {% endblock content %}
