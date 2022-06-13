@@ -18,7 +18,7 @@ CREATE TABLE gymclasses (
     start_time TIME,
     duration INT,
     capacity INT,
-    active boolean,
+    active boolean
 );
 
 CREATE TABLE bookings (
