@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request
 from flask import Blueprint
+import pdb
 
 from models.booking import Booking
 from models.gymclass import Gymclass
@@ -35,11 +36,14 @@ def create_booking():
     member = member_repository.select(member_id)
     gymclass = gymclass_repository.select(gymclass_id)
     booking = Booking(member, gymclass)
+
     no_free_spaces = booking_repository.check_capacity(booking)
     if no_free_spaces == True:
         return render_template("bookings/full.html")
+
     if member.membership != "Plus" and int(gymclass.start_time.strftime("%H")) >= 16:
         return render_template("bookings/upgrade.html")
+
     else:
         booking_repository.save(booking)
         gymclass_repository.update(gymclass)

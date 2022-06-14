@@ -1,5 +1,7 @@
 from flask import Flask, render_template
 
+import repositories.gymclass_repository as gymclass_repository
+
 from controllers.bookings_controller import bookings_blueprint
 from controllers.gymclasses_controller import gymclasses_blueprint
 from controllers.members_controller import members_blueprint
@@ -12,7 +14,8 @@ app.register_blueprint(members_blueprint)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    all_gymclasses = gymclass_repository.select_all()
+    return render_template("index.html", gymclasses=all_gymclasses)
 
 if __name__ == "__main__":
     app.run(debug=True)

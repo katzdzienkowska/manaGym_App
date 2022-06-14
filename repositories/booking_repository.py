@@ -59,7 +59,7 @@ def delete(id):
 #capacity check
 def check_capacity(booking):
     gymclass = booking.gymclass
-    members_added = len(gymclass_repository.list_of_members_booked(id))
+    members_added = len(gymclass_repository.list_of_members_booked(gymclass.id))
     if members_added < gymclass.capacity:
         return False
     else:
