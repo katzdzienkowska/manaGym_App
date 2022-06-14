@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <section>
-        <h2>{{ gymclass.gymclass_name }}</h2>
-
+<section>
+    <h2>{{ gymclass.gymclass_name }}</h2>
+    <hr>
+    <div class="booked">
         <h3>Members booked:</h3>
         <ul>
             {% for member in booked_members %}
                 <li>{{ member.name }}</li>
             {% endfor %}
         </ul>
-    </section>
+    </div>
+    <div >
+        <a href="/gymclasses">
+        <input class="go-back" type="button" value="Go back"></a>
+    </div>
+</section>
 {% endblock content %}

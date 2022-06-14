@@ -28,7 +28,7 @@ gymclass_1 = Gymclass("Crossfit", "Becky", "2022-06-20", "18:00", 45, 3, True)
 gymclass_2 = Gymclass("Kettlebells", "Taylor", "2022-06-23", "19:45", 30, 3, True)
 gymclass_3 = Gymclass("Yoga", "Karen", "2022-06-24", "14:00", 60, 12, True)
 gymclass_4 = Gymclass("Box Fit", "Andrew", "2022-06-25", "17:45", 30, 6, False)
-gymclass_5 = Gymclass("Mobility", "Jacob", "2022-06-20", "19:30", 45, 10, True)
+gymclass_5 = Gymclass("Mobility", "Jacob", "2022-06-29", "19:30", 45, 10, True)
 
 gymclass_repository.save(gymclass_1)
 gymclass_repository.save(gymclass_2)

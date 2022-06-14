@@ -1,13 +1,5 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    This is the dashboard.
-    <h2>Upcoming gym classes:</h2>
-    {% for gymclass in gymclasses %}
-        <p>{{ gymclass.gymclass_name }}</p>
-        <p>{{ gymclass.instructor }}</p>
-        <p>{{ gymclass.date }}</p>
-        <p>{{ gymclass.start_time }}</p>
-        <hr>
-    {% endfor %}
+<div class="dashboard"><img src="/static/images/background_home.jpg" alt=""></div>
 {% endblock content %}

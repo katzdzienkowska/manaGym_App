@@ -12,13 +12,13 @@ members_blueprint = Blueprint("members", __name__)
 @members_blueprint.route("/members")
 def members():
     all_members = member_repository.select_all()
-    return render_template("members/index.html", members=all_members)
+    return render_template("members/index.html", members=all_members, title="Members")
 
 # NEW
 # GET '/xxx/new'
 @members_blueprint.route("/members/new", methods = ["get"])
 def new_member():
-    return render_template("members/new.html") #add title later
+    return render_template("members/new.html", title="Add Member")
 
 # CREATE
 # POST '/xxx'
@@ -38,14 +38,14 @@ def create_member():
 def show_member(id):
     booked_gymclasses = member_repository.list_of_gymclasses_booked(id)
     found_member = member_repository.select(id)
-    return render_template("members/show.html", member=found_member, booked_gymclasses=booked_gymclasses)
+    return render_template("members/show.html", member=found_member, booked_gymclasses=booked_gymclasses, title="Member")
 
 # EDIT
 # GET '/xxx/<id>/edit'
 @members_blueprint.route("/members/<id>/edit", methods=["get"])
 def edit_member(id):
     edit_member = member_repository.select(id)
-    return render_template("members/edit.html", member=edit_member)
+    return render_template("members/edit.html", member=edit_member, title="Edit Member")
 
 # UPDATE
 # PUT '/xxx/<id>'

@@ -4,36 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- Font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
     <!--CSS files imported-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-    <title>iHeart Gym</title>
+    <title>{{ title }} - iHeart Gym</title>
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li>
-                <a href="/">Dashboard</a>
-            </li>
-            <li>
-                <a href="/members">Members</a>
-            </li>
-            <li>
-                <a href="/gymclasses">Gym Classes</a>
-            </li>
-            <li>
-                <a href="/bookings">Bookings</a>
-            </li>
-        </ul>
-    </nav>
-    <section>
+    <header>
+        <a href="/"><h1 id='logo'>iHeart Gym</h1></a>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/members">Members</a>
+                    </li>
+                    <li>
+                        <a href="/gymclasses">Gym Classes</a>
+                    </li>
+                    <li>
+                        <a href="/bookings">Bookings</a>
+                    </li>
+                </ul>
+            </nav>
+    </header>
+
+    <main class="main-container">
         {% block content %}
             
         {% endblock content %}
-    </section>
+    </main>
+
+    <footer>
+        <p>&copy; iHeart Gym Management App </p>
+    </footer>
 </body>
 
 </html>

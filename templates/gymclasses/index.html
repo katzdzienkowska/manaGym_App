@@ -1,38 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
-    <h1>Gym classes:</h1>
-
-    <h2>
+<section>
+    <h1 class="page-header">Gym classes:</h1>
+    <hr>
+    <h2 class="add-new">
         <a href="/gymclasses/new">Add new gym class</a>
     </h2>
-
-    <section>
-
-        <div>
+    <hr>
+    <br>
+    <div class="page-results">
+        <div class="details">
             {% for gymclass in gymclasses %}
-            <p>{{ gymclass.gymclass_name }}</p>
-            <p>{{ gymclass.instructor }}</p>
-            <p>{{ gymclass.date }}</p>
-            <p>{{ gymclass.start_time }}</p>
-            <p>{{ gymclass.duration }}</p>
-            <p>{{ gymclass.capacity }}</p>
-            <p>{{ gymclass.active }}</p>
+            <p><span>Name: </span>{{ gymclass.gymclass_name }}</p>
+            <p><span>Instructor: </span>{{ gymclass.instructor }}</p>
+            <p><span>Date: </span>{{ gymclass.date }}</p>
+            <p><span>Start time: </span>{{ gymclass.start_time }}</p>
+            <p><span>Duration: </span>{{ gymclass.duration }} minutes</p>
+            <p><span>Class capacity: </span>{{ gymclass.capacity }} members</p>
+            <p><span>Active? </span>{{ gymclass.active }}</p>
+            <p><a class="show-link" href="/gymclasses/{{ gymclass.id }}">Show members already booked</a></p>
+            <br>
         </div>
 
-        <div>
-            <a href="/gymclasses/{{ gymclass.id }}">Booked members</a>
-        </div>
-
-        <div>
-            <a href="/gymclasses/{{ gymclass.id }}/edit">Edit gym class</a>
+        <div class="edit-delete">
+            <a href="/gymclasses/{{ gymclass.id }}/edit"><input class="edit-button" type="button" value="Edit gym class"></a>
             <form action="/gymclasses/{{ gymclass.id }}/delete" method="post">
-                <input type="submit" value="Delete gym class">
+                <input class="delete-button" type="submit" value="Delete gym class">
             </form>
-            <hr>
-            {% endfor %}
         </div>
-    </section>
-
+        <hr>
+        {% endfor %}
+    </div>
+</section>
 {% endblock content %}

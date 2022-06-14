@@ -1,26 +1,32 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
-<h1>Bookings:</h1>
-
-<h2>
-    <a href="/bookings/new">Add new booking</a>
-</h2>
-
-<section>
-    {% for booking in bookings %}
-    <p>{{ booking.member.name }}</p>
-    <p>{{ booking.gymclass.gymclass_name }}</p>
-    <p>{{ booking.gymclass.instructor }}</p>
-    <p>{{ booking.gymclass.date }}</p>
-    <p>{{ booking.gymclass.start_time }}</p>
-    
-    <form action="/bookings/{{ booking.id }}/delete" method="post">
-        <input type="submit" value="Delete booking">
-    </form>
+<section>  
+    <h1 class="page-header">Bookings:</h1>
     <hr>
-    {% endfor %}
+    <h2 class="add-new">
+        <a href="/bookings/new">Add new booking</a>
+    </h2>
+    <hr>
+    <br>
+    <div class="page-results">
+        <div class="details">
+            {% for booking in bookings %}
+            <p><span>Member name: </span>{{ booking.member.name }}</p>
+            <p><span>Gym class name: </span>{{ booking.gymclass.gymclass_name }}</p>
+            <p><span>Instructor: </span>{{ booking.gymclass.instructor }}</p>
+            <p><span>Date: </span>{{ booking.gymclass.date }}</p>
+            <p><span>Start time: </span>{{ booking.gymclass.start_time }}</p>
+            <br>
+        </div>
+        <div class="just-delete">
+            <form action="/bookings/{{ booking.id }}/delete" method="post">
+                <input class="delete-button" type="submit" value="Delete booking">
+            </form>
+        </div>
+        <hr>
+        {% endfor %}
+    </div>
 </section>
 
 {% endblock content %}

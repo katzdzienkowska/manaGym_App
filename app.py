@@ -14,8 +14,7 @@ app.register_blueprint(members_blueprint)
 
 @app.route("/")
 def home():
-    all_gymclasses = gymclass_repository.select_all()
-    return render_template("index.html", gymclasses=all_gymclasses)
+    return render_template("index.html",)
 
 if __name__ == "__main__":
     app.run(debug=True)

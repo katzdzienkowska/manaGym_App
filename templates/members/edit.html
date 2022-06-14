@@ -2,55 +2,57 @@
 
 {% block content %}
     
-<h1>Edit member's information</h1>
 <section>
-    <form action="/members/{{ member.id }}" method="post">
-        
-        <div>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" value="{{ member.name }}">
-        </div>
+    <h1 class="page-header">Edit member details:</h1>
+    <hr>
+    <div class="form-page">
+        <form action="/members/{{ member.id }}" method="post">
+            
+            <div class="form-details">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" autofocus autocomplete="off" placeholder="Type member's name" required value="{{ member.name }}">
+            </div>
 
-        <div>
-            <label for="dob">Date of birth:</label>
-            <input type="date" id="dob" name="dob" value="{{ member.dob }}">
-        </div>
+            <div class="form-details">
+                <label for="dob">Date of birth:</label>
+                <input type="date" id="dob" name="dob" required value="{{ member.dob }}">
+            </div>
 
-        <div>
-            <label for="membership">Membership type:</label>
-            <select name="membership" id="membership">
-                <option value="Core"
-                {% if member.membership == "Core" %}
-                    selected="selected"
-                {% endif %}
-                >Core</option>
-                <option value="Plus"
-                {% if member.membership == "Plus" %}
-                    selected="selected"
-                {% endif %}
-                >Plus</option>
-            </select>
-        </div>
+            <div class="form-details">
+                <label for="membership">Membership type:</label>
+                <select name="membership" id="membership">
+                    <option value="Core"
+                    {% if member.membership == "Core" %}
+                        selected="selected"
+                    {% endif %}
+                    >Core</option>
+                    <option value="Plus"
+                    {% if member.membership == "Plus" %}
+                        selected="selected"
+                    {% endif %}
+                    >Plus</option>
+                </select>
+            </div>
 
-        <div>
-            <label for="active">Active member?</label>
-            <select name="active" id="active">
-                <option value="True"
-                {% if member.active == True %}
-                    selected="selected"
-                {% endif %}
-                >True</option>
-                <option value="False"
-                {% if member.active == False %}
-                    selected="selected"
-                {% endif %}
-                >False</option>
-            </select>
-        </div>
-
-        <input type="submit" value="Save member">
-
-    </form>
+            <div class="form-details">
+                <label for="active">Active member?</label>
+                <select name="active" id="active">
+                    <option value="True"
+                    {% if member.active == True %}
+                        selected="selected"
+                    {% endif %}
+                    >True</option>
+                    <option value="False"
+                    {% if member.active == False %}
+                        selected="selected"
+                    {% endif %}
+                    >False</option>
+                </select>
+            </div>
+            <br>
+            <input class="add-button" type="submit" value="Save member">
+        </form>
+    </div>
 </section>
 
 {% endblock content %}

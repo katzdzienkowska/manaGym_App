@@ -2,39 +2,41 @@
 
 {% block content %}
     
-<h1>Add new booking</h1>
 <section>
-    <form action="/bookings" method="post">
-        
-        <div>
-            <label for="member">Choose member:</label>
-            <select name="member_id" id="member">
-                {% for member in members %}
-                    {% if member.active == True %}
-                    <option value="{{ member.id }}">
-                        {{ member.name }}
-                    </option>
-                    {% endif %}
-                {% endfor %}
-            </select>
-        </div>
+    <h1 class="page-header">Add new booking</h1>
+    <hr>
+    <div class="form-page">
+        <form action="/bookings" method="post">
+            
+            <div class="form-details">
+                <label for="member">Choose member:</label>
+                <select name="member_id" id="member">
+                    {% for member in members %}
+                        {% if member.active == True %}
+                        <option value="{{ member.id }}">
+                            {{ member.name }}
+                        </option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
 
-        <div>
-            <label for="gymclass">Gym class:</label>
-            <select name="gymclass_id" id="gymclass">
-                {% for gymclass in gymclasses %}
-                    {% if  gymclass.active == True %}
-                    <option value="{{ gymclass.id }}">
-                        {{ gymclass.gymclass_name }} with {{ gymclass.instructor }}, {{ gymclass.date }} at {{ gymclass.start_time }}
-                    </option>
-                    {% endif %}
-                {% endfor %}
-            </select>
-        </div>
-
-        <input type="submit" value="Add booking">
-
-    </form>
+            <div class="form-details">
+                <label for="gymclass">Gym class:</label>
+                <select name="gymclass_id" id="gymclass">
+                    {% for gymclass in gymclasses %}
+                        {% if  gymclass.active == True %}
+                        <option value="{{ gymclass.id }}">
+                            {{ gymclass.gymclass_name }} with {{ gymclass.instructor }}, {{ gymclass.date }} at {{ gymclass.start_time }}
+                        </option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+            <br>
+            <input class="add-button" type="submit" value="Add booking">
+        </form>
+    </div>
 </section>
 
 {% endblock content %}

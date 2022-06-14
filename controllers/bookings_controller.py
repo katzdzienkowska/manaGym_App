@@ -17,7 +17,7 @@ bookings_blueprint = Blueprint("bookings", __name__)
 @bookings_blueprint.route("/bookings")
 def bookings():
     all_bookings = booking_repository.select_all()
-    return render_template("bookings/index.html", bookings=all_bookings)
+    return render_template("bookings/index.html", bookings=all_bookings, title="Bookings")
 
 # NEW
 # GET '/xxx/new'
@@ -25,7 +25,7 @@ def bookings():
 def new_booking():
     members = member_repository.select_all()
     gymclasses = gymclass_repository.select_all()
-    return render_template("bookings/new.html", members=members, gymclasses=gymclasses) #add title later
+    return render_template("bookings/new.html", members=members, gymclasses=gymclasses, title="Add Booking")
 
 # CREATE
 # POST '/xxx'

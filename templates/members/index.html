@@ -1,31 +1,32 @@
 {% extends 'base.html' %}
 
-<!--put this in a table maybe?-->
 {% block content %}
-    <h1>Members:</h1>
-
-    <h2>
+<section>
+    <h1 class="page-header">Members:</h1>
+    <hr>
+    <h2 class="add-new">
         <a href="/members/new">Add new member</a>
     </h2>
-    
-    <section>
-        {% for member in members %}
-        <p>{{ member.name }}</p>
-        <p>{{ member.dob }}</p>
-        <p>{{ member.membership }}</p>
-        <p>{{ member.active }}</p>
-
-        <div>
-            <a href="/members/{{ member.id }}">Booked gym classes</a>
+    <hr>
+    <br>
+    <div class="page-results">
+        <div class="details">
+            {% for member in members %}
+            <p><span>Name:</span> {{ member.name }}</p>
+            <p><span>Date of birth:</span> {{ member.dob }}</p>
+            <p><span>Membership:</span> {{ member.membership }}</p>
+            <p><span>Active?</span> {{ member.active }}</p>
+            <p><a class="show-link" href="/members/{{ member.id }}">Show gym classes booked</a></p>
+            <br>
         </div>
-        
-        <a href="/members/{{ member.id }}/edit">Edit member</a>
-        <form action="/members/{{ member.id }}/delete" method="post">
-            <input type="submit" value="Delete member">
-        </form>
+        <div class="edit-delete">
+            <a href="/members/{{ member.id }}/edit"><input class="edit-button" type="button" value="Edit member"></a>
+            <form action="/members/{{ member.id }}/delete" method="post">
+                <input class="delete-button" type="submit" value="Delete member">
+            </form>
+        </div>
         <hr>
         {% endfor %}
-    </section>
+    </div>
+</section>
 {% endblock content %}
-
-<!--add on this page a button to add a new member as well!!-->
