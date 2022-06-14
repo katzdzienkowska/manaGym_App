@@ -1,6 +1,3 @@
-from unicodedata import name
-
-
 class Gymclass:
     def __init__(self, gymclass_name, instructor, date, start_time, duration, capacity, active=False, id=None):
         self.gymclass_name = gymclass_name

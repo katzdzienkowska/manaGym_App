@@ -52,8 +52,16 @@ def delete(id):
     values = [id]
     run_sql(sql, values)
 
-# #Update
-# def update(booking):
-#     sql = "UPDATE bookings SET (member_id, gymclass_id) = (%s, %s) WHERE id = %s"
-#     values = [booking.member.id, booking.gymclass.id, booking.id]
-#     run_sql(sql, values)
+
+#Update - not needed here
+
+
+#capacity check
+def check_capacity(booking):
+    gymclass = booking.gymclass
+    members_added = len(gymclass_repository.list_of_members_booked(id))
+    if members_added < gymclass.capacity:
+        return False
+    else:
+        return True
+    

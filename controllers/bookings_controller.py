@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, request
 from flask import Blueprint
 
 from models.booking import Booking
+from models.gymclass import Gymclass
 import repositories.booking_repository as booking_repository
 import repositories.gymclass_repository as gymclass_repository
 import repositories.member_repository as member_repository
@@ -33,33 +34,17 @@ def create_booking():
     gymclass_id = request.form["gymclass_id"]
     member = member_repository.select(member_id)
     gymclass = gymclass_repository.select(gymclass_id)
-    new_booking = Booking(member, gymclass)
-    booking_repository.save(new_booking)
+    booking = Booking(member, gymclass)
+    no_free_spaces = booking_repository.check_capacity(booking)
+    if no_free_spaces == True:
+        return render_template("bookings/full.html")
+    if member.membership != "Plus" and int(gymclass.start_time.strftime("%H")) >= 16:
+        return render_template("bookings/upgrade.html")
+    else:
+        booking_repository.save(booking)
+        gymclass_repository.update(gymclass)
     return redirect("/bookings")
 
-# SHOW
-# GET '/xxx/<id>' - not needed here!
-
-# EDIT
-# GET '/xxx/<id>/edit'
-@bookings_blueprint.route("/bookings/<id>/edit", methods=["get"])
-def edit_booking(id):
-    booking = booking_repository.select(id)
-    member = member_repository.select_all()
-    gymclass = gymclass_repository.select_all()
-    return render_template("bookings/edit.html", booking=booking, member=member, gymclass=gymclass)
-
-# UPDATE
-# PUT '/xxx/<id>'
-@bookings_blueprint.route("/bookings/<id>", methods=["post"])
-def update_booking(id):
-    member_id = request.form["member_id"]
-    gymclass_id = request.form["gymclass_id"]
-    member = member_repository.select(member_id)
-    gymclass = gymclass_repository.select(gymclass_id)
-    booking = Booking(member, gymclass, id)
-    booking_repository.update(booking)
-    return redirect("/bookings")
 
 # DELETE
 # DELETE '/xxx/<id>'

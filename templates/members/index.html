@@ -10,16 +10,20 @@
     
     <section>
         {% for member in members %}
-        <p>{{ member.id }}</p>
         <p>{{ member.name }}</p>
         <p>{{ member.dob }}</p>
         <p>{{ member.membership }}</p>
         <p>{{ member.active }}</p>
+
+        <div>
+            <a href="/members/{{ member.id }}">Booked gym classes</a>
+        </div>
         
         <a href="/members/{{ member.id }}/edit">Edit member</a>
         <form action="/members/{{ member.id }}/delete" method="post">
             <input type="submit" value="Delete member">
         </form>
+        <hr>
         {% endfor %}
     </section>
 {% endblock content %}

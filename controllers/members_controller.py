@@ -36,8 +36,9 @@ def create_member():
 # GET '/xxx/<id>'
 @members_blueprint.route("/members/<id>")
 def show_member(id):
+    booked_gymclasses = member_repository.list_of_gymclasses_booked(id)
     found_member = member_repository.select(id)
-    return render_template("members/show.html", member=found_member)
+    return render_template("members/show.html", member=found_member, booked_gymclasses=booked_gymclasses)
 
 # EDIT
 # GET '/xxx/<id>/edit'

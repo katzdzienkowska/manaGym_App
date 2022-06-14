@@ -23,7 +23,7 @@
             <label for="gymclass">Gym class:</label>
             <select name="gymclass_id" id="gymclass">
                 {% for gymclass in gymclasses %}
-                    {% if  gymclass.active == True%}
+                    {% if  gymclass.active == True %}
                     <option value="{{ gymclass.id }}">
                         {{ gymclass.gymclass_name }} with {{ gymclass.instructor }}, {{ gymclass.date }} at {{ gymclass.start_time }}
                     </option>

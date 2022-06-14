@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
+    <section>
+        <h2>{{ member.name }}</h2>
+
+        <h3>Gym classes booked:</h3>
+        <ul>
+            {% for gymclass in booked_gymclasses %}
+                <li>{{ gymclass.gymclass_name }}</li>
+            {% endfor %}
+        </ul>
+    </section>
 {% endblock content %}
