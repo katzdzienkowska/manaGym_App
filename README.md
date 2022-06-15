@@ -12,23 +12,25 @@ manaGym is a gym management web app that allows a gym's staff to store client/gy
 | HTML |
 | CSS |
 
+
 ## To use this program, from the project's root folder run in the terminal the following:
 
-- Create and seed an SQL database called managym:
+Create and seed an SQL database called managym:
 ```
 psql createdb managym
 psql -d managym -f db/managym.sql
 ```
 
-- Populate with data using the console:
+Populate with data using the console:
 ```
 python3 console.py
 ```
 
-- Run on the browser using Flask (assuming that Flask is installed on your computer):
+Run on the browser using Flask (assuming that Flask is installed on your computer):
 ```
 flask run
 ```
+
 
 # Project brief:
 
