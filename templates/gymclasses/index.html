@@ -5,7 +5,7 @@
     <h1 class="page-header">Gym classes:</h1>
     <hr>
     <h2 class="add-new">
-        <a href="/gymclasses/new">Add new gym class</a>
+        <a href="/gymclasses/new"><span class="material-symbols-outlined">fitness_center</span> Add new gym class</a>
     </h2>
     <hr>
     <br>
@@ -18,8 +18,8 @@
             <p><span>Start time: </span>{{ gymclass.start_time }}</p>
             <p><span>Duration: </span>{{ gymclass.duration }} minutes</p>
             <p><span>Class capacity: </span>{{ gymclass.capacity }} members</p>
-            <p><span>Active? </span>{{ gymclass.active }}</p>
-            <p><a class="show-link" href="/gymclasses/{{ gymclass.id }}">Show members already booked</a></p>
+            <p><span>Active? </span>{% if gymclass.active == True %} Yes {% else %} No  {% endif %}</p>
+            <p><a class="show-link" href="/gymclasses/{{ gymclass.id }}"><span class="material-symbols-outlined">task_alt</span> Show members already booked</a></p>
             <br>
         </div>
 

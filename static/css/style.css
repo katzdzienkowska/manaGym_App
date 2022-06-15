@@ -44,9 +44,10 @@ header > nav > ul > li > a {
 
 #logo {
     padding-left: 20px;
-    font-weight: bolder;
-    font-size: 65px;
-    color: rgb(206, 41, 41);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 60px;
+    color: rgb(9, 161, 236);
     text-decoration: none;
 }
 
@@ -78,10 +79,15 @@ header > a {
     font-weight: bolder;
 }
 
+.page-sub-header {
+    font-size: 35px;
+    font-weight: bolder;
+}
+
 .add-new a {
     font-size: 25px;
     text-decoration: none;
-    color: cornflowerblue;
+    color: rgb(9, 161, 236);
 }
 
 .details span {
@@ -94,7 +100,7 @@ hr {
 
 .show-link {
     text-decoration: none;
-    color: cornflowerblue;
+    color: rgb(9, 161, 236);
 }
 
 .edit-delete {
@@ -155,4 +161,38 @@ footer {
     text-align: center;
     position: static;
     bottom: 0;
+}
+
+/* icons styling */
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 48
 }

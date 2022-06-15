@@ -5,7 +5,7 @@
     <h1 class="page-header">Members:</h1>
     <hr>
     <h2 class="add-new">
-        <a href="/members/new">Add new member</a>
+        <a href="/members/new"><span class="material-symbols-outlined">person_add</span> Add new member</a>
     </h2>
     <hr>
     <br>
@@ -15,8 +15,8 @@
             <p><span>Name:</span> {{ member.name }}</p>
             <p><span>Date of birth:</span> {{ member.dob }}</p>
             <p><span>Membership:</span> {{ member.membership }}</p>
-            <p><span>Active?</span> {{ member.active }}</p>
-            <p><a class="show-link" href="/members/{{ member.id }}">Show gym classes booked</a></p>
+            <p><span>Active?</span>{% if member.active == True %} Yes {% else %} No  {% endif %}</p>
+            <p><a class="show-link" href="/members/{{ member.id }}"><span class="material-symbols-outlined">task_alt</span> Show gym classes booked</a></p>
             <br>
         </div>
         <div class="edit-delete">
