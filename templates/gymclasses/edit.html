@@ -5,7 +5,7 @@
 <section>
     <h1 class="page-sub-header">Edit gym class details:</h1>
     <hr>
-    <div class="form-page">
+    <main class="form-page">
         <form action="/gymclasses/{{ gymclass.id }}" method="post">
             
             <div class="form-details">
@@ -45,17 +45,17 @@
                     {% if gymclass.active == True %}
                         selected="selected"
                     {% endif %}
-                    >True</option>
+                    >Yes</option>
                     <option value="False"
                     {% if gymclass.active == False %}
                         selected="selected"
                     {% endif %}
-                    >False</option>
+                    >No</option>
                 </select>
             </div>
             <br>
             <input class="add-button" type="submit" value="Save gym class">
         </form>
-    </div>
+    </main>
 </section>
 {% endblock content %}

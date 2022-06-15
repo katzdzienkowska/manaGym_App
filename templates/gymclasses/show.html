@@ -4,17 +4,17 @@
 <section>
     <h2>{{ gymclass.gymclass_name }}</h2>
     <hr>
-    <div class="booked">
+    <main class="booked">
         <h3>Members booked:</h3>
         <ul>
             {% for member in booked_members %}
                 <li>{{ member.name }}</li>
             {% endfor %}
         </ul>
-    </div>
-    <div >
+    </main>
+    <footer>
         <a href="/gymclasses">
         <input class="go-back" type="button" value="Go back"></a>
-    </div>
+    </footer>
 </section>
 {% endblock content %}

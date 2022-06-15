@@ -2,10 +2,13 @@
 
 {% block content %}
 <section>
-    <div class="error">
+    <main class="error">
         <h1>This member has already been booked to this class.</h1>
         <p>Duplicated bookings are not alowed.</p>
-
-    </div>
+    </main>
+    <footer>
+        <a href="/bookings/new">
+        <input class="go-back" type="button" value="Go back"></a>
+        </footer>
 </section>
 {% endblock content %}

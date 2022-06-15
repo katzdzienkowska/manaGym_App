@@ -9,7 +9,7 @@
     </h2>
     <hr>
     <br>
-    <div class="page-results">
+    <main class="page-results">
         <div class="details">
             {% for gymclass in gymclasses|sort(attribute='date') %}
             <p><span class="name">Name: </span>{{ gymclass.gymclass_name }}</p>
@@ -31,6 +31,6 @@
         </div>
         <hr>
         {% endfor %}
-    </div>
+    </main>
 </section>
 {% endblock content %}

@@ -6,6 +6,7 @@ from models.member import Member
 import repositories.gymclass_repository as gymclass_repository
 import repositories.member_repository as member_repository
 
+
 #CRUD: Create, Read, Update and Delete
 
 
@@ -32,6 +33,7 @@ def select_all():
         bookings.append(booking)
     return bookings
 
+
 def select(id):
     sql = "SELECT * FROM bookings WHERE id = %s"
     values = [id]
@@ -46,6 +48,7 @@ def select(id):
 def delete_all():
     sql = "DELETE FROM bookings"
     run_sql(sql)
+
 
 def delete(id):
     sql = "DELETE FROM bookings WHERE id = %s"

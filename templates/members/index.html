@@ -9,7 +9,7 @@
     </h2>
     <hr>
     <br>
-    <div class="page-results">
+    <main class="page-results">
         <div class="details">
             {% for member in members|sort(attribute='name') %}
             <p><span class="name">Name:</span> {{ member.name }}</p>
@@ -27,6 +27,6 @@
         </div>
         <hr>
         {% endfor %}
-    </div>
+    </main>
 </section>
 {% endblock content %}

@@ -70,10 +70,6 @@ header > a {
     gap: 3rem;
 }
 
-.dashboard {
-    background-size: 100%;
-}
-
 .page-header {
     font-size: 45px;
     font-weight: bolder;
@@ -129,6 +125,7 @@ hr {
 }
 
 .go-back {
+    margin-top: 20px;
     background-color: rgba(41, 137, 239, 0.384);
 }
 
@@ -140,7 +137,8 @@ hr {
     gap: 1rem;
 }
 
-.booked ul {
+.booked > ul {
+    padding: 0;
     display: flex;
     flex-direction: column;
     justify-items: center;

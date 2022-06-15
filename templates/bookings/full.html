@@ -2,9 +2,13 @@
 
 {% block content %}
 <section>
-    <div class="error">
+    <main class="error">
         <h1>Sorry, we cannot book in this member.</h1>
         <p>There are no free spaces available in this class.</p>
-    </div>
+    </main>
+    <footer>
+        <a href="/bookings/new">
+        <input class="go-back" type="button" value="Go back"></a>
+    </footer>
 </section>
 {% endblock content %}
