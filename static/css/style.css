@@ -60,7 +60,7 @@ header > a {
     margin: 0 auto;
     padding: 1rem;
     padding-bottom: 30px;
-    width: 80%;
+    width: 70%;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -90,8 +90,11 @@ header > a {
     color: rgb(9, 161, 236);
 }
 
-.details span {
-    font-weight: bold;
+.top-result {
+    color:rgb(9, 161, 236);
+}
+.name {
+    font-weight: 800;
 }
 
 hr {

@@ -1,5 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="dashboard"><img src="/static/images/background_home.jpg" alt=""></div>
+<section>
+    <h1 class="page-sub-header"><span class="material-symbols-outlined">fitness_center</span> Upcoming gym classes:</h1>
+    <hr>
+    <div class="page-results">
+        <div class="details">
+    {% for gymclass in gymclasses|sort(attribute='date') %}
+        {% if  gymclass.active == True %}
+            <p class="top-result"><span class="name">Gym class name:</span> {{ gymclass.gymclass_name }}</p>
+            <p><span class="name">Instructor:</span> {{ gymclass.instructor }}</p>
+            <p><span class="name">Date:</span> {{ gymclass.date }}</p>
+            <p><span class="name">Start time:</span> {{ gymclass.start_time }}</p>
+            </div>
+            <hr>
+        {% endif %}
+    {% endfor %}
+    </div>
+</section>
 {% endblock content %}

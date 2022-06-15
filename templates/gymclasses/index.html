@@ -11,14 +11,14 @@
     <br>
     <div class="page-results">
         <div class="details">
-            {% for gymclass in gymclasses %}
-            <p><span>Name: </span>{{ gymclass.gymclass_name }}</p>
-            <p><span>Instructor: </span>{{ gymclass.instructor }}</p>
-            <p><span>Date: </span>{{ gymclass.date }}</p>
-            <p><span>Start time: </span>{{ gymclass.start_time }}</p>
-            <p><span>Duration: </span>{{ gymclass.duration }} minutes</p>
-            <p><span>Class capacity: </span>{{ gymclass.capacity }} members</p>
-            <p><span>Active? </span>{% if gymclass.active == True %} Yes {% else %} No  {% endif %}</p>
+            {% for gymclass in gymclasses|sort(attribute='date') %}
+            <p><span class="name">Name: </span>{{ gymclass.gymclass_name }}</p>
+            <p><span class="name">Instructor: </span>{{ gymclass.instructor }}</p>
+            <p><span class="name">Date: </span>{{ gymclass.date }}</p>
+            <p><span class="name">Start time: </span>{{ gymclass.start_time }}</p>
+            <p><span class="name">Duration: </span>{{ gymclass.duration }} minutes</p>
+            <p><span class="name">Class capacity: </span>{{ gymclass.capacity }} members</p>
+            <p><span class="name">Active? </span>{% if gymclass.active == True %} Yes {% else %} No  {% endif %}</p>
             <p><a class="show-link" href="/gymclasses/{{ gymclass.id }}"><span class="material-symbols-outlined">task_alt</span> Show members already booked</a></p>
             <br>
         </div>

@@ -12,11 +12,11 @@
     <div class="page-results">
         <div class="details">
             {% for booking in bookings %}
-            <p><span>Member name: </span>{{ booking.member.name }}</p>
-            <p><span>Gym class name: </span>{{ booking.gymclass.gymclass_name }}</p>
-            <p><span>Instructor: </span>{{ booking.gymclass.instructor }}</p>
-            <p><span>Date: </span>{{ booking.gymclass.date }}</p>
-            <p><span>Start time: </span>{{ booking.gymclass.start_time }}</p>
+            <p><span class="name">Member name: </span>{{ booking.member.name }}</p>
+            <p><span class="name">Gym class name: </span>{{ booking.gymclass.gymclass_name }}</p>
+            <p><span class="name">Instructor: </span>{{ booking.gymclass.instructor }}</p>
+            <p><span class="name">Date: </span>{{ booking.gymclass.date }}</p>
+            <p><span class="name">Start time: </span>{{ booking.gymclass.start_time }}</p>
             <br>
         </div>
         <div class="just-delete">

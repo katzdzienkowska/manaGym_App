@@ -11,11 +11,11 @@
     <br>
     <div class="page-results">
         <div class="details">
-            {% for member in members %}
-            <p><span>Name:</span> {{ member.name }}</p>
-            <p><span>Date of birth:</span> {{ member.dob }}</p>
-            <p><span>Membership:</span> {{ member.membership }}</p>
-            <p><span>Active?</span>{% if member.active == True %} Yes {% else %} No  {% endif %}</p>
+            {% for member in members|sort(attribute='name') %}
+            <p><span class="name">Name:</span> {{ member.name }}</p>
+            <p><span class="name">Date of birth:</span> {{ member.dob }}</p>
+            <p><span class="name">Membership:</span> {{ member.membership }}</p>
+            <p><span class="name">Active?</span>{% if member.active == True %} Yes {% else %} No  {% endif %}</p>
             <p><a class="show-link" href="/members/{{ member.id }}"><span class="material-symbols-outlined">task_alt</span> Show gym classes booked</a></p>
             <br>
         </div>

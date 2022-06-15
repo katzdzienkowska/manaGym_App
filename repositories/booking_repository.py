@@ -56,7 +56,7 @@ def delete(id):
 #Update - not needed here
 
 
-#capacity check
+#gym class capacity check
 def check_capacity(booking):
     gymclass = booking.gymclass
     members_added = len(gymclass_repository.list_of_members_booked(gymclass.id))
@@ -65,3 +65,13 @@ def check_capacity(booking):
     else:
         return True
     
+#duplicated bookings check
+def check_duplicated_bookings(booking):
+    member = booking.member
+    members_added = member_repository.list_of_gymclasses_booked(member.id)
+    for member in members_added:
+        if member == member:
+            return True
+        else: 
+            continue
+    return False

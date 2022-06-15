@@ -44,6 +44,10 @@ def create_booking():
     if member.membership != "Plus" and int(gymclass.start_time.strftime("%H")) >= 16:
         return render_template("bookings/upgrade.html")
 
+    member_duplicated = booking_repository.check_duplicated_bookings(booking)
+    if member_duplicated == True:
+        return render_template("bookings/duplicate.html")
+
     else:
         booking_repository.save(booking)
         gymclass_repository.update(gymclass)
