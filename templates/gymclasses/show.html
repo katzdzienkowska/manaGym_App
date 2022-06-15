@@ -8,7 +8,7 @@
         <h3>Members booked:</h3>
         <ul>
             {% for member in booked_members %}
-                <li>{{ member.name }}</li>
+                <li>{{ member.name }} on {{ gymclass.date }} at {{ gymclass.start_time }}</li>
             {% endfor %}
         </ul>
     </main>
