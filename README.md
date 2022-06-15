@@ -1,7 +1,8 @@
-#manaGym
+# manaGym
 Full stack project with Flask and PostgreSQL.
 
 manaGym is a gym management web app that allows a gym's staff to store client/gym classes data, as well as track bookings.
+
 
 | This project was created using: |
 | :------------------------------ |
@@ -11,23 +12,29 @@ manaGym is a gym management web app that allows a gym's staff to store client/gy
 | HTML |
 | CSS |
 
-# To use this program, from the project's root folder run in the terminal the following:
+## To use this program, from the project's root folder run in the terminal the following:
 
-Create and seed an SQL database called managym:
-    psql createdb managym
-    psql -d managym -f db/managym.sql
+- Create and seed an SQL database called managym:
+```
+psql createdb managym
+psql -d managym -f db/managym.sql
+```
 
-Populate with data using the console:
-    python3 console.py 
+- Populate with data using the console:
+```
+python3 console.py
+```
 
-Run on the browser using Flask (assuming that Flask is installed on your computer):
-    flask run
+- Run on the browser using Flask (assuming that Flask is installed on your computer):
+```
+flask run
+```
 
-#Brief:
+# Project brief:
 
 Build an app allowing a local gym manage memberships and register members for courses.
 
-# MVP
+## MVP
 
 - The app should allow the gym to create and edit `Member`s.
 - The app should allow the gym to create and edit `Course`s.
@@ -35,7 +42,7 @@ Build an app allowing a local gym manage memberships and register members for co
 - The app should show a list of all upcoming `Course`s.
 - The app should show all `Member`s that are booked in for a particular course.
 
-# Extensions
+## Extensions
 
 - `Course`s could have a maximum capacity, and users can only be added while there is space remaining.
 - The gym could be able to give its `Member`s Premium or Standard membership. Standard `Member`s can only be signed up for `Course`s during off-peak hours.
