@@ -6,9 +6,9 @@ manaGym is a gym management web app that allows a gym's staff to store client/gy
 
 | This project was created using: |
 | :------------------------------ |
-| Python 3 |
+| Python3 |
 | Flask |
-| PosgreSQL |
+| PostgreSQL |
 | HTML |
 | CSS |
 
