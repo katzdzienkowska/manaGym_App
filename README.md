@@ -1,7 +1,7 @@
-# manaGym
-Full stack project with Flask and PostgreSQL.
+# manaGym - Gym Management App
+manaGym is a gym management web app that allows user/ gym staff to store members/gym classes data, as well as track bookings.
 
-manaGym is a gym management web app that allows a gym's staff to store client/gym classes data, as well as track bookings.
+It's a full stack project build with Flask and PostgreSQL, using CRUD actions and as many to many relationship data model.
 
 
 | This project was created using: |
@@ -11,25 +11,6 @@ manaGym is a gym management web app that allows a gym's staff to store client/gy
 | PostgreSQL |
 | HTML |
 | CSS |
-
-
-## To use this program, from the project's root folder run in the terminal the following:
-
-Create and seed an SQL database called managym:
-```
-psql createdb managym
-psql -d managym -f db/managym.sql
-```
-
-Populate with data using the console:
-```
-python3 console.py
-```
-
-Run on the browser using Flask (assuming that Flask is installed on your computer):
-```
-flask run
-```
 
 
 # Project brief:
@@ -50,3 +31,23 @@ Build an app allowing a local gym manage memberships and register members for co
 - The gym could be able to give its `Member`s Premium or Standard membership. Standard `Member`s can only be signed up for `Course`s during off-peak hours.
 - The Gym could mark `Member`s and `Course`s as active/deactivated. Deactivated `Member`s/`Course`s will not appear when creating bookings.
 - Duplicated bookings are not alowed.
+
+
+## To use this program, from the project's root folder run in the terminal the following:
+
+Create and seed an SQL database called managym:
+```
+psql createdb managym
+psql -d managym -f db/managym.sql
+```
+
+Populate with data using the console:
+```
+python3 console.py
+```
+
+Run on the browser using Flask (assuming that Flask is installed on your computer):
+```
+flask run
+```
+
