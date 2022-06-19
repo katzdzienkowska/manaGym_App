@@ -1,7 +1,7 @@
 # manaGym - Gym Management App
 manaGym is a gym management web app that allows user/ gym staff to store members/gym classes data, as well as track bookings.
 
-It's a full stack project build with Flask and PostgreSQL, using CRUD actions and as many to many relationship data model.
+It's a full stack project build with Flask and PostgreSQL, using CRUD actions and many to many relationship data model.
 
 
 | This project was created using: |
