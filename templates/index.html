@@ -6,7 +6,7 @@
     <hr>
     <div class="page-results">
         <div class="details">
-    {% for gymclass in gymclasses|sort(attribute='date') %}
+    {% for gymclass in gymclasses[:3]|sort(attribute='date') %}
         {% if  gymclass.active == True %}
             <p class="top-result"><span class="name">Gym class name:</span> {{ gymclass.gymclass_name }}</p>
             <p><span class="name">Instructor:</span> {{ gymclass.instructor }}</p>
