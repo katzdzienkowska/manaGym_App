@@ -2,7 +2,7 @@
 
 # manaGym - Full-Stack Flask/PostgreSQL App
 
-**Project:** Solo Project build in 5th week of the CodeClan Course.
+**Project:** Solo Project built in the 5th week of the CodeClan Course.
 
 <p>manaGym is a gym management web app that allows User/Gym Staff to store Members/Gym Classes data, as well as track bookings.</p>
 
