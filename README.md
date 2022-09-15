@@ -10,6 +10,12 @@
 
 <br/>
 
+## App Running:
+
+![screen-gif](./static/manaGym.gif)
+
+<br/>
+
 ## Project brief:
 
 <h3>Gym Management App</h3>
